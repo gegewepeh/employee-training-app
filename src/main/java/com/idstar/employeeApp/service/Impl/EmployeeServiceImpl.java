@@ -61,7 +61,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (employeeExists.isEmpty()) {
             throw new AppError(HttpStatus.NOT_FOUND, "Employee Id Not Found");
         }
-        if (!Objects.equals(employeeExists.get().getId(), employee.updateEmployeeDetailRequest.id)) {
+
+        if (!Objects.equals(employeeExists.get().getEmployeeDetail().getId(), employee.updateEmployeeDetailRequest.id)) {
             throw new AppError(HttpStatus.NOT_FOUND, "Can't update using other employee detail id");
         }
 

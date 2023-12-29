@@ -27,7 +27,7 @@ public class BankAccount {
     @JsonProperty("nama")
     private String name;
 
-    @Column(name = "type", nullable = false, length = 6)
+    @Column(name = "type", nullable = false, length = 20)
     @JsonProperty("jenis")
     private String type;
 

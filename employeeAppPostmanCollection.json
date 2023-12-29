@@ -1,0 +1,614 @@
+{
+	"info": {
+		"_postman_id": "9f6a3cf2-b0f9-4d81-8ae8-b7a3eb46a046",
+		"name": "Idstar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14053583"
+	},
+	"item": [
+		{
+			"name": "EmployeeApp",
+			"item": [
+				{
+					"name": "Employee",
+					"item": [
+						{
+							"name": "Get Employee",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Employee",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan/list?page=1&size=3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nama\": \"EmployeeBaru\",\n    \"dob\": \"1996-07-07\",\n    \"status\": \"active\",\n    \"alamat\": \"jakarta\",\n    \"detailKaryawan\": {\n        \"nik\": \"123456789\",\n        \"npwp\": \"987654321\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan/save",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Employee",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 21,\n    \"nama\": \"EmployeeBaru(edited)\",\n    \"dob\": \"1996-07-07\",\n    \"status\": \"active\",\n    \"alamat\": \"jakarta\",\n    \"detailKaryawan\": {\n        \"id\": 24,\n        \"nik\": \"123455991\",\n        \"npwp\": \"123456779910\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan/update",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Employee",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 15\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan/delete",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "BankAccount",
+					"item": [
+						{
+							"name": "Get Bank Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/v1/idstar/rekening/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"rekening",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Bank Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/v1/idstar/rekening/list?page=0&size=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"rekening",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Bank Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nama\": \"Riki Aldi Pare\",\n    \"jenis\": \"BCA\",\n    \"rekening\": \"123456789\",\n    \"alamat\": \"jakarti\",\n    \"karyawan\": {\n        \"id\": \"4\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/rekening/save",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"rekening",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Bank Account",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"15\",\n    \"nama\": \"Andres Jordan\",\n    \"jenis\": \"Mandiri\",\n    \"rekening\": \"123456789\",\n    \"alamat\": \"Jakarta Utara\",\n    \"karyawan\": {\n        \"id\": \"21\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/rekening/update",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"rekening",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Bank Account",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/rekening/delete",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"rekening",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Training",
+					"item": [
+						{
+							"name": "Get Training",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/v1/idstar/training/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"training",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Training",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/v1/idstar/training/list?page=0&size=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"training",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Training",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"7\",\n    \"tema\": \"JAVA DEVELOPERR\",\n    \"pengajar\": \"RIKI ALDI PARU\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/training/update",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"training",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Training",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tema\": \"JAVA DEVELOPER\",\n    \"pengajar\": \"RIKI ALDI PARII\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/training/save",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"training",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Training",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/training/delete",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"training",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "EmployeeTraning",
+					"item": [
+						{
+							"name": "Get Employee - Training",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan-training/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan-training",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Employee - Training",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan-training/list?page=0&size=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan-training",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Employee - Training",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"karyawan\": {\n        \"id\": 4\n    },\n    \"training\": {\n        \"id\": 2\n    },\n    \"tanggal\": \"2023-01-01 13:00:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan-training/save",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan-training",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Employee - Training",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"karyawan\": {\n        \"id\": \"4\"\n    },\n    \"training\": {\n        \"id\": \"7\"\n    },\n    \"tanggal\": \"2023-01-02 13:00:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan-training/update",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan-training",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Employee - Training",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/idstar/karyawan-training/delete",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"idstar",
+										"karyawan-training",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
